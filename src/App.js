@@ -57,10 +57,11 @@ export default function App() {
 
   const router = createBrowserRouter([
     { path :'' , element:<Main ifUserLogin={myToken} remove={removeUseData}/>,children:[
-    {path : 'home' , element : <ProtectedRoute> <Home/> </ProtectedRoute>},
-    {path : 'about' , element : <ProtectedRoute> <About/> </ProtectedRoute>},
+    {path : '' , element :<Home/>},
+    {path : 'home' , element : <> <Home/> </>},
+    {path : 'about' , element : <> <About/> </>},
     // {path : 'details' , element : <Details/>},
-    {path : 'search' , element : <ProtectedRoute> <Search/>  </ProtectedRoute>},
+    {path : 'search' , element : <> <Search/>  </>},
     {path : 'login' , element : <Login loginTkn={getLogInToken}/>},
     {path : '' , element : <Login loginTkn={getLogInToken}/>},
     {path : 'register' , element : <Register/>},

@@ -18,14 +18,14 @@ export default function Login({loginTkn}) {
         setJoiErrors('')
     };
 
-    async function apiRegister() {
+    async function apiLogin() {
         const response = await axios.post('https://reqres.in/api/login', dataUser);
     
         if (response.data.token!=null) {
             navigate('/home');
             localStorage.setItem('token' , response.data.token)
             loginTkn()
-            // alert("User has been registered successfully!");
+            alert("User has been login successfully!");
             
         } else {
             setJoiErrors({ wrong: "Invalid email or password." });
@@ -42,7 +42,7 @@ function onSubmit(e){
     const joiResponse = schema.validate(dataUser, { abortEarly: false });
 
     if(joiResponse.error === undefined){
-        apiRegister()
+        apiLogin()
     }else{
         const errorsList = joiResponse.error.details
         setJoiErrors(errorsList)

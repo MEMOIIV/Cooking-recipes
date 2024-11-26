@@ -77,7 +77,20 @@ return (
         </li>
     </ul>
 
-    </>:''}
+    </>:   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to='home'>Home</Link>
+        </li>
+        <li className="nav-item">
+            <Link className="nav-link" onClick={goToAbout}>About</Link>
+            {isLoading == true ? <div
+            className=
+            " bg-success z-4 vh-100 overflow-hidden d-flex justify-content-center align-items-center position-fixed top-0 start-0 end-0 bottom-0 text-white"
+        >
+            <i className="fa-solid fa-circle-notch fa-spin fa-4x"></i>
+        </div>: ""}
+        </li>
+    </ul>}
     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         {ifUserLogin?<>
     <div className="d-flex mb-2" role="search">
@@ -89,7 +102,8 @@ return (
         </div> */}
         <li className=' nav-item'><button className='btn btn-danger p-0 ms-2  mb-2'><div className="nav-link text-white" aria-current="page" onClick={logOut}>Logout</div></button></li>
         </>:<>
-        <li className=' nav-item'><button  className='btn btn-info p-0 me-2'><Link className="nav-link " aria-current="page" to='/register'>Register</Link></button></li>
+        <input className="form-control me-2 " type="search" placeholder="Search" aria-label="Search" value={searchQuery} onChange={handleInputChange}  />
+        <button className="btn btn-outline-success me-2" type="submit" onClick={getValue}>Search</button>
         <li className=' nav-item'><button className='btn btn-info p-0'><Link className="nav-link " aria-current="page" to='/login'>Login</Link></button></li>
         </>}
         
