@@ -1,6 +1,6 @@
 import { useState , useEffect } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import Register from './components/Register/Register';
+
 import Main from './components/Main/Main';
 import Home from './components/Home/Home';
 import Details from './components/Details/Details';
@@ -64,7 +64,6 @@ export default function App() {
     {path : 'search' , element : <> <Search/>  </>},
     {path : 'login' , element : <Login loginTkn={getLogInToken}/>},
     {path : '' , element : <Login loginTkn={getLogInToken}/>},
-    {path : 'register' , element : <Register/>},
     {path : '*' , element : <h2> Error</h2>},
   ]}
 ])
